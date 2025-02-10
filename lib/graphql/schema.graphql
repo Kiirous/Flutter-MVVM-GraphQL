@@ -1,0 +1,15 @@
+type Query {
+    countries: [Country!]!
+}
+
+type Country {
+    code: String!
+    name: String!
+    phone: String!
+    continent: Continent!
+}
+
+type Continent {
+    name: String!
+    code: String!
+}

@@ -1,0 +1,7 @@
+targets:
+  $default:
+    builders:
+      graphql_codegen:
+        options:
+          schema_asset: "lib/graphql/schema.graphql"
+          output: "lib/graphql/graphql_api.dart"

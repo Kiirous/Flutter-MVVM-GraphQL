@@ -1,0 +1,11 @@
+query GetCountries {
+  countries {
+    code
+    name
+    phone
+    continent {
+      name
+      code
+    }
+  }
+}
