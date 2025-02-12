@@ -4,8 +4,8 @@ import 'package:graphql_request/domain/country_repository.dart';
 import 'package:provider/provider.dart';
 import 'core/endpoints/endpoints.dart';
 import 'data/remote_datasource.dart';
-import 'view_models/country/country_view_model.dart';
-import 'views/country_list_page.dart';
+import 'presentation/view_models/country_view_model.dart';
+import 'presentation/views/country_list_page.dart';
 
 void main() async {
   await initHiveForFlutter();
