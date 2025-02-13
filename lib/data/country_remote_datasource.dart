@@ -6,10 +6,10 @@ import '../graphql/queries/countries.graphql.dart';
 import '../models/country/country_failure.dart';
 import '../models/country/country_model.dart';
 
-class RemoteDatasource {
+class CountryRemoteDatasource {
   final GraphQLClient client;
 
-  RemoteDatasource({required GraphQLEndpoint endpoint})
+  CountryRemoteDatasource({required GraphQLEndpoint endpoint})
       : client = GraphQLService.createClient(endpoint);
 
   Future<Result<CountryFailure, List<Country>>> fetchCountries() async {

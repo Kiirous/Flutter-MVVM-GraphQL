@@ -36,7 +36,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   graphql_flutter: ^5.1.2
-  freezed_annotation: ^2.4.4
   provider: ^6.1.2
 
 dev_dependencies:
@@ -51,7 +50,6 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   build_runner: ^2.4.14
   graphql_codegen: ^1.2.1
-  freezed: ^2.5.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
