@@ -1,11 +1,13 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 enum GraphQLEndpoint {
   countries,
   anotherEndpoint,
 }
 
 class Endpoints {
-  static const String countriesEndpoint = 'https://countries.trevorblades.com/';
-  static const String anotherEndpoint = 'https://api.anothergraphql.com/';
+  static String get countriesEndpoint => dotenv.env['COUNTRIES_API'] ?? '';
+  static String get anotherEndpoint => dotenv.env['XPTO_API'] ?? '';
 
   static String getEndpoint(GraphQLEndpoint endpoint) {
     switch (endpoint) {

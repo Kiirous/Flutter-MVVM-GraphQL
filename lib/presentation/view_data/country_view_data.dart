@@ -1,4 +1,4 @@
-import '../../core/helpers/view_state.dart';
+import '../../core/utils/view_state.dart';
 import '../../models/country/country_model.dart';
 
 class CountryViewData {

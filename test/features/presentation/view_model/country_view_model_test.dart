@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:graphql_request/core/helpers/view_state.dart';
+import 'package:graphql_request/core/utils/view_state.dart';
 import 'package:graphql_request/presentation/view_models/country_view_model.dart';
 
 import '../../../mocks/fake_country_repository.dart';

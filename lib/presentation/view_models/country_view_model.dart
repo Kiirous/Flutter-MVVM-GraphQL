@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../domain/country_repository.dart';
-import '../../core/helpers/result.dart';
-import '../../core/helpers/view_state.dart';
+import '../../core/utils/result.dart';
+import '../../core/utils/view_state.dart';
 import '../../models/country/country_failure.dart';
 import '../../models/country/country_model.dart';
 import '../../presentation/view_data/country_view_data.dart';

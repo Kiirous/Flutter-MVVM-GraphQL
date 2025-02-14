@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:graphql_request/domain/country_repository.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +10,7 @@ import 'presentation/views/country_list_page.dart';
 
 void main() async {
   await initHiveForFlutter();
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 

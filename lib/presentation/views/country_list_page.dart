@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../core/helpers/view_state.dart';
+import 'package:lottie/lottie.dart';
+import '../../core/utils/view_state.dart';
 import '../view_models/country_view_model.dart';
+
 
 class CountryListPage extends StatefulWidget {
   const CountryListPage({super.key});
@@ -35,7 +37,12 @@ class _CountryListPageState extends State<CountryListPage> {
         }
 
         if (viewModel.viewData.state.isLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return Center(
+            child: FractionallySizedBox(
+              widthFactor: 0.3,
+              child: Lottie.asset('assets/loading.json'),
+            ),
+          );
         }
 
         if (viewModel.viewData.state.isError &&
@@ -60,25 +67,30 @@ class _CountryListPageState extends State<CountryListPage> {
               ),
             ),
             Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: viewModel.viewData.filteredCountries.length,
-                itemBuilder: (context, index) {
-                  final country = viewModel.viewData.filteredCountries[index];
-                  return ListTile(
-                    title: Text(country.name),
-                    subtitle:
-                        Text('Code: ${country.code} - Phone: ${country.phone}'),
-                    trailing: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(country.continent.name),
-                        Text('Code: ${country.continent.code}'),
-                      ],
-                    ),
-                  );
+              child: RefreshIndicator(
+                onRefresh: () async {
+                  viewModel.fetchCountries();
                 },
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: viewModel.viewData.filteredCountries.length,
+                  itemBuilder: (context, index) {
+                    final country = viewModel.viewData.filteredCountries[index];
+                    return ListTile(
+                      title: Text(country.name),
+                      subtitle:
+                          Text('Code: ${country.code} - Phone: ${country.phone}'),
+                      trailing: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(country.continent.name),
+                          Text('Code: ${country.continent.code}'),
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
           ],

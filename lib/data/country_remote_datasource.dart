@@ -1,5 +1,5 @@
 import 'package:graphql_flutter/graphql_flutter.dart';
-import '../core/helpers/result.dart';
+import '../core/utils/result.dart';
 import '../core/services/graphql_service.dart';
 import '../core/endpoints/endpoints.dart';
 import '../graphql/queries/countries.graphql.dart';
@@ -14,7 +14,10 @@ class CountryRemoteDatasource {
 
   Future<Result<CountryFailure, List<Country>>> fetchCountries() async {
     final result = await client.query(
-      QueryOptions(document: documentNodeQueryGetCountries),
+      QueryOptions(
+        document: documentNodeQueryGetCountries,
+        fetchPolicy: FetchPolicy.cacheFirst,
+      ),
     );
 
     if (result.hasException) {

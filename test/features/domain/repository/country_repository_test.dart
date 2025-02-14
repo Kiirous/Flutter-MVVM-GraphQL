@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:graphql_request/core/helpers/result.dart';
+import 'package:graphql_request/core/utils/result.dart';
 import 'package:graphql_request/domain/country_repository.dart';
 import 'package:graphql_request/models/country/country_failure.dart';
 

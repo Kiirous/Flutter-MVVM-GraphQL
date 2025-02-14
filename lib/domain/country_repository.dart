@@ -1,4 +1,4 @@
-import '../core/helpers/result.dart';
+import '../core/utils/result.dart';
 import '../data/country_remote_datasource.dart';
 import '../models/country/country_failure.dart';
 import '../models/country/country_model.dart';
