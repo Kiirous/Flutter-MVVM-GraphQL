@@ -4,7 +4,7 @@ import '../core/services/graphql_service.dart';
 import '../core/endpoints/endpoints.dart';
 import '../graphql/queries/countries.graphql.dart';
 import '../models/country/country_failure.dart';
-import '../models/country/country_model.dart';
+import '../models/country/country.dart';
 
 class CountryRemoteDatasource {
   final GraphQLClient client;

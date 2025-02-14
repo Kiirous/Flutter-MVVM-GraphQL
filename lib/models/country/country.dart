@@ -1,5 +1,5 @@
 import '../../graphql/queries/countries.graphql.dart';
-import 'continent_model.dart';
+import 'continent.dart';
 
 class Country {
   final String name;

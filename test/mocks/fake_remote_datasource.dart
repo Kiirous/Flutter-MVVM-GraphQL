@@ -1,9 +1,9 @@
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:graphql_request/core/utils/result.dart';
 import 'package:graphql_request/data/country_remote_datasource.dart';
-import 'package:graphql_request/models/country/continent_model.dart';
+import 'package:graphql_request/models/country/continent.dart';
 import 'package:graphql_request/models/country/country_failure.dart';
-import 'package:graphql_request/models/country/country_model.dart';
+import 'package:graphql_request/models/country/country.dart';
 
 class FakeRemoteDatasourceSuccess implements CountryRemoteDatasource {
   @override

@@ -1,8 +1,8 @@
 import 'package:graphql_request/core/utils/result.dart';
 import 'package:graphql_request/domain/country_repository.dart';
-import 'package:graphql_request/models/country/continent_model.dart';
+import 'package:graphql_request/models/country/continent.dart';
 import 'package:graphql_request/models/country/country_failure.dart';
-import 'package:graphql_request/models/country/country_model.dart';
+import 'package:graphql_request/models/country/country.dart';
 
 class FakeCountryRepositorySuccess implements CountryRepository {
   @override

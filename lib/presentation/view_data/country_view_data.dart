@@ -1,5 +1,5 @@
 import '../../core/utils/view_state.dart';
-import '../../models/country/country_model.dart';
+import '../../models/country/country.dart';
 
 class CountryViewData {
   const CountryViewData({

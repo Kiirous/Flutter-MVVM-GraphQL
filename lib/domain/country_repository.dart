@@ -1,7 +1,7 @@
 import '../core/utils/result.dart';
 import '../data/country_remote_datasource.dart';
 import '../models/country/country_failure.dart';
-import '../models/country/country_model.dart';
+import '../models/country/country.dart';
 
 class CountryRepository {
   final CountryRemoteDatasource _remoteDatasource;

@@ -1,25 +1,37 @@
 import 'package:flutter/material.dart';
+import '../../core/services/country_cache_service.dart';
 import '../../domain/country_repository.dart';
 import '../../core/utils/result.dart';
 import '../../core/utils/view_state.dart';
 import '../../models/country/country_failure.dart';
-import '../../models/country/country_model.dart';
+import '../../models/country/country.dart';
+import '../../models/country/country_model_adapter.dart';
 import '../../presentation/view_data/country_view_data.dart';
 
 class CountryViewModel extends ChangeNotifier {
   final CountryRepository _repository;
+  final CountryCacheService _cacheService;
 
-  CountryViewModel(this._repository);
+  CountryViewModel(this._repository, this._cacheService);
 
   CountryViewData viewData = CountryViewData.empty();
 
   Future<void> fetchCountries() async {
     _setLoadingState();
 
+    if (await _cacheService.hasCache()) {
+      final cachedCountries = await _cacheService.getCachedCountries();
+      final countries = cachedCountries.map((e) => e.toEntity()).toList();
+      _handleSuccess(countries);
+      return;
+    }
+
     final result = await _repository.fetchCountries();
 
     switch (result) {
       case Success(value: final countryList):
+        final countryModels = countryList.map((e) => CountryModel.fromEntity(e)).toList();
+        await _cacheService.saveCountries(countryModels);
         _handleSuccess(countryList);
       case Failure(exception: final exception):
         _handleError(exception);
