@@ -9,7 +9,7 @@ class FakeCountryCacheService implements CountryCacheService {
 
   @override
   Future<bool> hasCache() async {
-    return true;
+    return false;
   }
 
   @override
