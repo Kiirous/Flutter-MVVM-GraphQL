@@ -41,7 +41,9 @@ lib/
 
 ## 🎯 Features
 
-✅ Display holidays from various countries using GraphQL
+✅ Displays a list of countries using GraphQL
+
+✅ Instant filtering by name, country code, continent name, continent code and phone code.
 
 ✅ Work offline with Hive
 
