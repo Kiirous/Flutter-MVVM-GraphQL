@@ -2,7 +2,7 @@
 
 ## 🚀 Overview
 
-This is a Flutter application that displays holidays from different countries, allowing users to plan their vacations based on national holidays and weekends. The app uses GraphQL to fetch real-time data and implements an MVVM architecture to ensure clean and organized code.
+This is a Flutter application that displays all countries with informations like Name, Continent, Continent Code, Phone Code, etc. The app uses GraphQL to fetch real-time data and implements an MVVM architecture to ensure clean and organized code.
 
 ## 🛠️ Technologies Used
 
